@@ -1,0 +1,2 @@
+C:\Maks\Projects\DisRPC\bin\Release\net9.0-windows\win-x64\publish\DisRPC.pdb
+C:\Maks\Projects\DisRPC\bin\Release\net9.0-windows\win-x64\publish\DisRPC.exe

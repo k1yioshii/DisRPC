@@ -1,0 +1,41 @@
+﻿<Window x:Class="DisRPC.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Height="500"
+        Width="800"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        FontFamily="Montserrat"
+        ResizeMode="NoResize"
+        Icon="Assets/Images/Logo.png">
+    <!-- Оболочка с закругленными углами -->
+    <Border CornerRadius="10" Background="#23272A">
+        <Grid>
+            <Border x:Name="DraggableBar" MouseDown="DraggableBar_OnMouseDown" CornerRadius="10" Height="30"
+                    VerticalAlignment="Top" Background="#202020">
+                <Grid>
+                    <Label Content="DisRPC" Foreground="#fff" FontWeight="Bold" FontSize="16"
+                           VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="5, 0, 0, 0" />
+
+                    <Button x:Name="CloseButton" Click="CloseButton_OnClick" Style="{StaticResource CloseButtonStyle}"
+                            Width="30" Height="30" VerticalAlignment="Center" HorizontalAlignment="Right"
+                            Margin="0, 0, 10, 0" />
+
+                    <Button x:Name="MinimizeButton" Click="MinimizeButton_OnClick"
+                            Style="{StaticResource MinimizeButtonStyle}" Width="30" Height="30"
+                            VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0, 0, 40, 0" />
+                </Grid>
+            </Border>
+
+            <!-- Основная часть окна -->
+            <Border CornerRadius="0, 0, 10, 10" Width="800" Height="470" VerticalAlignment="Bottom">
+                <Frame x:Name="MainFrame" />
+            </Border>
+        </Grid>
+    </Border>
+</Window>

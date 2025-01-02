@@ -1,0 +1,238 @@
+﻿<Page x:Class="DisRPC.Pages.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      Height="470"
+      Width="800"
+      VerticalAlignment="Bottom"
+      FontFamily="Montserrat">
+    <Border CornerRadius="0, 0, 10, 10" Background="#23272A">
+        <Grid>
+            <!-- Card -->
+            <Border CornerRadius="10" Width="240" Height="275" Background="#2C2F33" VerticalAlignment="Top"
+                    HorizontalAlignment="Left" Margin="15">
+                <Grid>
+                    <Label Content="Основное" FontSize="18" FontWeight="SemiBold" Foreground="#fff"
+                           HorizontalContentAlignment="Center" />
+                    <Rectangle Fill="#40444B" Width="150" Height="2" VerticalAlignment="Top" Margin="0, 35, 0, 0" />
+                    <Label Content="Application ID" Margin="5, 52, 0, 0" Foreground="#fff" FontWeight="Medium" />
+                    <TextBox x:Name="ApplicationIdField" TextChanged="ApplicationIdField_OnTextChanged"
+                             Style="{StaticResource InputField}" Width="200" Height="25"
+                             VerticalAlignment="Top"
+                             HorizontalAlignment="Left"
+                             Margin="10, 82, 0, 0" />
+                    <Label Content="Первый текст" Margin="5, 122, 0, 0" Foreground="#fff" FontWeight="Medium" />
+                    <TextBox x:Name="FirstTextField" TextChanged="FirstTextField_OnTextChanged"
+                             Style="{StaticResource InputField}" Width="200" Height="25"
+                             VerticalAlignment="Top"
+                             HorizontalAlignment="Left"
+                             Margin="10, 152, 0, 0" />
+                    <Label Content="Второй текст" Margin="5, 192, 0, 0" Foreground="#fff" FontWeight="Medium" />
+                    <TextBox x:Name="SecondTextField" TextChanged="SecondTextField_OnTextChanged"
+                             Style="{StaticResource InputField}" Width="200" Height="25"
+                             VerticalAlignment="Top"
+                             HorizontalAlignment="Left"
+                             Margin="10, 222, 0, 0" />
+                </Grid>
+            </Border>
+
+            <!-- Card -->
+            <Border CornerRadius="10" Width="240" Height="205" Background="#2C2F33" VerticalAlignment="Top"
+                    HorizontalAlignment="Left" Margin="280, 15, 0, 0">
+                <Grid>
+                    <Label Content="Изображения" FontSize="18" FontWeight="SemiBold" Foreground="#fff"
+                           HorizontalContentAlignment="Center" />
+                    <Rectangle Fill="#40444B" Width="150" Height="2" VerticalAlignment="Top" Margin="0, 35, 0, 0" />
+                    <Label Content="Большая картинка" Margin="5, 52, 0, 0" Foreground="#fff"
+                           FontWeight="Medium" />
+                    <TextBox x:Name="BigImageKey" TextChanged="BigImageKey_OnTextChanged"
+                             Style="{StaticResource InputField}" Width="200" Height="25"
+                             VerticalAlignment="Top"
+                             HorizontalAlignment="Left"
+                             Margin="10, 82, 0, 0" />
+                    <Label Content="Маленькая картинка" Margin="5, 122, 0, 0" Foreground="#fff"
+                           FontWeight="Medium" />
+                    <TextBox x:Name="SmallImageKey" TextChanged="SmallImageKey_OnTextChanged"
+                             Style="{StaticResource InputField}" Width="200" Height="25"
+                             VerticalAlignment="Top"
+                             HorizontalAlignment="Left"
+                             Margin="10, 152, 0, 0" />
+                </Grid>
+            </Border>
+
+            <!-- Card -->
+            <Border CornerRadius="10" Width="240" Height="205" Background="#2C2F33" VerticalAlignment="Top"
+                    HorizontalAlignment="Left" Margin="545, 15, 0, 0">
+                <Grid>
+                    <Label Content="Текст изображений" FontSize="18" FontWeight="SemiBold" Foreground="#fff"
+                           HorizontalContentAlignment="Center" />
+                    <Rectangle Fill="#40444B" Width="150" Height="2" VerticalAlignment="Top" Margin="0, 35, 0, 0" />
+                    <Label Content="Текст большой картинки" Margin="5, 52, 0, 0" Foreground="#fff" FontWeight="Medium" />
+                    <TextBox x:Name="BigImageText" Style="{StaticResource InputField}" Width="200" Height="25"
+                             VerticalAlignment="Top"
+                             HorizontalAlignment="Left"
+                             Margin="10, 82, 0, 0" />
+                    <Label Content="Текст маленькой картинки" Margin="5, 122, 0, 0" Foreground="#fff"
+                           FontWeight="Medium" />
+                    <TextBox x:Name="SmallImageText" Style="{StaticResource InputField}" Width="200" Height="25"
+                             VerticalAlignment="Top"
+                             HorizontalAlignment="Left"
+                             Margin="10, 152, 0, 0" />
+                </Grid>
+            </Border>
+
+            <!-- Preview -->
+            <Grid Width="240" Height="135" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="15, 0, 0, 25">
+                <Label Content="Preview" HorizontalAlignment="Center" Foreground="#fff" FontSize="16" FontWeight="Bold" />
+                <Image x:Name="BigImagePreview" Source="/Assets/Images/bigimagepreview.png" Width="100" Height="100"
+                       HorizontalAlignment="Left"
+                       Margin="0, 20, 0, 0" />
+                <Image x:Name="SmallImagePreview" Source="/Assets/Images/bigimagepreview.png" Width="50" Height="50"
+                       HorizontalAlignment="Left" Margin="60, 80, 0, 0">
+                    <Image.Clip>
+                        <RectangleGeometry Rect="0,0,50,50" RadiusX="25" RadiusY="25" />
+                    </Image.Clip>
+                </Image>
+
+                <Label x:Name="ApplicationNamePreview" Content="Имя приложения" Foreground="#fff" FontWeight="Medium"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left" Margin="110, 0, 0, 50" />
+                <Label x:Name="FirstTextPreview" Content="Первый текст" HorizontalContentAlignment="Left"
+                       Foreground="#fff" FontWeight="Medium" VerticalAlignment="Center"
+                       HorizontalAlignment="Left" Margin="110, 0, 0, 5" />
+                <Label x:Name="SecondTextPreview" Content="Второй текст" HorizontalContentAlignment="Left"
+                       Foreground="#fff" FontWeight="Medium" VerticalAlignment="Center"
+                       HorizontalAlignment="Left" Margin="110, 40, 0, 0" />
+                <Label Content="Прошло: 00:00:00" HorizontalContentAlignment="Left" Foreground="#fff"
+                       FontWeight="Medium" VerticalAlignment="Center"
+                       HorizontalAlignment="Left" Margin="110, 80, 0, 0" />
+            </Grid>
+
+            <!-- Card -->
+            <Border Width="240" Height="205" VerticalAlignment="Bottom" Background="#2C2F33" CornerRadius="10"
+                    Margin="0, 0, 0, 20">
+                <Grid>
+                    <Label Content="Кнопки (Soon...)" FontSize="18" FontStyle="Italic" FontWeight="SemiBold"
+                           Foreground="#fff"
+                           HorizontalContentAlignment="Center" VerticalAlignment="Center" />
+                    <!-- <Rectangle Fill="#40444B" Width="150" Height="2" VerticalAlignment="Top" Margin="0, 35, 0, 0" /> -->
+                    <!-- <Label Content="Имя кнопки" Margin="5, 55, 0, 0" Foreground="#fff" FontWeight="Medium" /> -->
+                    <!-- <TextBox Style="{StaticResource InputField}" Width="200" Height="25" -->
+                    <!--          VerticalAlignment="Top" -->
+                    <!--          HorizontalAlignment="Left" -->
+                    <!--          Margin="10, 82, 0, 0" /> -->
+                    <!-- <Label Content="Ссылка кнопки" Margin="5, 110, 0, 0" Foreground="#fff" -->
+                    <!--        FontWeight="Medium" /> -->
+                    <!-- <TextBox Style="{StaticResource InputField}" Width="200" Height="25" -->
+                    <!--          VerticalAlignment="Top" -->
+                    <!--          HorizontalAlignment="Left" -->
+                    <!--          Margin="10, 137, 0, 0" /> -->
+                    <!-- <Button Width="105" Height="25" Background="#5865F2" BorderThickness="0" Content="Добавить" -->
+                    <!--         Foreground="#fff" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Left" -->
+                    <!--         Margin="10, 0, 0, 10"> -->
+                    <!--     <Button.Template> -->
+                    <!--         <ControlTemplate TargetType="Button"> -->
+                    <!--             <Border Background="{TemplateBinding Background}" -->
+                    <!--                     BorderBrush="{TemplateBinding BorderBrush}" -->
+                    <!--                     BorderThickness="{TemplateBinding BorderThickness}" -->
+                    <!--                     CornerRadius="5"> -->
+                    <!--                 <ContentPresenter HorizontalAlignment="Center" -->
+                    <!--                                   VerticalAlignment="Center" /> -->
+                    <!--             </Border> -->
+                    <!--         </ControlTemplate> -->
+                    <!--     </Button.Template> -->
+                    <!-- </Button> -->
+                </Grid>
+            </Border>
+
+            <!-- Card -->
+            <Border CornerRadius="10" Width="240" Height="90" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                    Margin="0, 0, 15, 135" Background="#2C2F33">
+                <Grid>
+                    <Label Content="Пресеты (Soon...)" FontSize="18" FontWeight="SemiBold" FontStyle="Italic"
+                           Foreground="#fff"
+                           HorizontalContentAlignment="Center" VerticalAlignment="Center" />
+                </Grid>
+            </Border>
+
+            <!-- CheckBox -->
+            <CheckBox x:Name="DontShowTimeCheckBox" Width="15" Height="15" VerticalAlignment="Bottom"
+                      HorizontalAlignment="Right"
+                      Margin="0, 0, 240, 110" Style="{StaticResource CheckBox}" />
+            <Label Content="Не показывать время" VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                   Foreground="#fff" Width="220" Margin="0, 0, 15, 105" />
+
+            <!-- Button -->
+            <Button x:Name="StartButton" Click="StartButton_OnClick" Visibility="Visible" Width="240" Height="60"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Right"
+                    Margin="0, 0, 15, 20" BorderThickness="0" Content="Запустить" FontWeight="Bold"
+                    FontSize="24" Foreground="#fff">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#5865F2" />
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="BorderThickness" Value="0" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}"
+                                            CornerRadius="10">
+                                        <ContentPresenter HorizontalAlignment="Center"
+                                                          VerticalAlignment="Center"
+                                                          Content="{TemplateBinding Content}" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#4752C4" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#3642A0" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <!-- Button -->
+            <Button x:Name="StopButton" Click="StopButton_OnClick" Visibility="Collapsed" Width="240" Height="60"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Right"
+                    Margin="0, 0, 15, 20" BorderThickness="0" Content="Остановить" FontWeight="Bold"
+                    FontSize="24" Foreground="#fff">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#ED4245 " />
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="BorderThickness" Value="0" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}"
+                                            CornerRadius="10">
+                                        <ContentPresenter HorizontalAlignment="Center"
+                                                          VerticalAlignment="Center"
+                                                          Content="{TemplateBinding Content}" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#4752C4" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#3642A0" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </Grid>
+    </Border>
+</Page>

@@ -1,0 +1,91 @@
+## Windows ##
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer Package (Wix)
+*.wixpdb
+
+## User-specific files ##
+# User-specific files for Visual Studio
+.vs/
+.vscode/
+.idea/
+# User-specific files for Rider
+.idea/
+
+# User-specific files for Visual Studio for Mac
+.vscode/
+
+# User-specific files for Rider
+.idea/
+
+## Build results ##
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]evelopment/
+[Dd]ist/
+[Dd]ebug-*
+[Dd]ist-*
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]evelopment/
+[Dd]ist/
+[Dd]ebug-*
+[Dd]ist-*
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# JetBrains Rider
+.idea/
+
+# Windows Installer Package (Wix)
+*.wixpdb
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+# Windows Installer Package (Wix)
+*.wixpdb
+
+
+# User-specific files for Rider
+.idea/
+
+## Windows Installer ##
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+## User-specific files ##
+# User-specific files for Visual Studio
+.vs/
+.vscode/
+.idea/
+# User-specific files for Rider
+.idea/
+# User-specific files for Visual Studio for Mac
+.vscode/
+
+# User-specific files for Rider
+.idea/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+
+ ## Windows Installer ##
+ .END
